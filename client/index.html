@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reach the Door - Romantic Shooting Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- CHARACTER SELECTION SCREEN -->
+    <div id="character-selection" class="screen">
+        <div class="selection-container">
+            <h1>🎮 Reach the Door</h1>
+            <h2>Choose Your Character</h2>
+            
+            <div class="character-buttons">
+                <button class="character-btn" data-character="girl" id="girl-btn">
+                    <div class="character-icon">👩</div>
+                    <h3>Aurat (Girl)</h3>
+                    <p>The Shooter</p>
+                </button>
+                
+                <button class="character-btn" data-character="boy" id="boy-btn">
+                    <div class="character-icon">👨</div>
+                    <h3>Aadmi (Boy)</h3>
+                    <p>The Runner</p>
+                </button>
+            </div>
+            
+            <div id="selection-status"></div>
+        </div>
+    </div>
+
+    <!-- STORY SCREEN -->
+    <div id="story-screen" class="screen" style="display: none;">
+        <div class="story-container">
+            <h1>💝 The Story</h1>
+            <div class="story-content">
+                <div class="story-section">
+                    <div class="story-icon">🎂</div>
+                    <p>It's your birthday today...</p>
+                </div>
+                
+                <div class="story-section">
+                    <div class="story-icon">❤️</div>
+                    <p>Your aadmi loves you so much...</p>
+                </div>
+                
+                <div class="story-section">
+                    <div class="story-icon">💼</div>
+                    <p>But he still wants to go to office on your special day!</p>
+                </div>
+                
+                <div class="story-section">
+                    <div class="story-icon">🎯</div>
+                    <p>You need to stop him...</p>
+                </div>
+                
+                <div class="story-section">
+                    <div class="story-icon">💕</div>
+                    <p><strong>Make him surrender anyhow!</strong></p>
+                </div>
+            </div>
+            
+            <div id="story-roles">
+                <div class="role-info">
+                    <h3 id="my-role-display"></h3>
+                    <p id="my-objective"></p>
+                </div>
+            </div>
+            
+            <button id="start-game-btn" class="start-btn">Start Game! 🎮</button>
+        </div>
+    </div>
+
+    <!-- GAME SCREEN -->
+    <div id="game-screen" class="screen" style="display: none;">
+        <div id="game-container">
+            <div id="status-bar">
+                <div id="role-display">Loading...</div>
+                <div id="health-bar-container">
+                    <label>Boy's Health:</label>
+                    <div id="health-bar">
+                        <div id="health-fill"></div>
+                    </div>
+                    <span id="health-text">100%</span>
+                </div>
+                <div id="special-notice" style="display: none;">
+                    Press 'H' for Special Bullet! ❤️
+                </div>
+            </div>
+
+            <div id="bullet-selector" style="display: none;">
+                <h3>Bullet Types (Girl):</h3>
+                <button class="bullet-btn active" data-type="kutte">1 - Kutte (4%)</button>
+                <button class="bullet-btn" data-type="gadhe">2 - Gadhe (3%)</button>
+                <button class="bullet-btn" data-type="shabash">3 - Shabash (5%)</button>
+            </div>
+
+            <canvas id="gameCanvas" width="1000" height="600"></canvas>
+
+            <div id="controls-info">
+                <p><strong>Controls:</strong> Arrow Keys to Move</p>
+                <p id="shoot-info" style="display: none;">Space/Click to Shoot | 1,2,3 to Change Bullets | H for Special</p>
+            </div>
+
+            <div id="game-message" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
