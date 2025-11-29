@@ -659,11 +659,12 @@ function showGameOver(data) {
     if (data.winner === 'girl') {
         if (data.ending === 'love') {
             message = `
-                <div class="heart">❤️</div>
-                <h2>I Surrender to Your Love!</h2>
-                <div class="kiss">💋 💋 💋</div>
-                <p>Aadmi ne haar maan li pyaar ke aage...</p>
+                <div class="heart">❤️❤️❤️</div>
+                <h2>I Surrender to Your Love!!</h2>
+                <div class="kiss">😘 ❤️ 😘</div>
+                <p>Plan krne jaa rhe the aurat...<br>naii jaa rhe the office</p>
                 <div style="margin-top: 20px; font-size: 48px;">👨‍❤️‍💋‍👩</div>
+                <p>code:WannabeurDiary</p>
             `;
             
             setTimeout(() => {
@@ -675,16 +676,16 @@ function showGameOver(data) {
             }, 500);
         } else {
             message = `
-                <h2>You Won!</h2>
-                <p>But aadmi is little sad... 😔</p>
-                <p>He wanted to go to office on your birthday</p>
+                <h2>You Won!! pr code naii denge</h2>
+                <p>kyuki aadmi is little sad... 😔</p>
+                <p>aise naii milta code...<br>instruction follow krne pdte h🤣🫵</p>
             `;
         }
     } else if (data.winner === 'boy') {
         message = `
             <h2>Aadmi Office Chala Gaya 💔</h2>
             <p>He escaped on your birthday...</p>
-            <p>Girl is sad now 😢</p>
+            <p>Aurat is sad now 😢</p>
         `;
     }
     
